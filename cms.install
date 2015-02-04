@@ -175,12 +175,6 @@ function cms_install(&$tasks, &$install_state) {
   }
   $query->execute();
 
-  if (module_exists('cms_core_content')) {
-   module_load_include('module', 'features');
-   features_revert(array('cms_core_content' => array('menu_links')));
-   drupal_flush_all_caches();
-  }
-
   module_load_include('inc', 'pathauto');
   module_load_include('inc', 'pathauto.pathauto');
   $nids = db_query("SELECT nid FROM {node}")->fetchCol();
