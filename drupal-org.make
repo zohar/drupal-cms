@@ -79,7 +79,6 @@ projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.x-dev"
 
 projects[views][subdir] = contrib
-projects[views][version] = "3.8"
 
 projects[bootstrap][version] = "3.x-dev"
 projects[bootstrap][download][type] = "git"
@@ -103,7 +102,6 @@ projects[cms_blog][subdir] = cms
 ; -------
 
 projects[webform][subdir] = contrib
-projects[webform][version] = "4.0-rc5"
 
 projects[cms_contact][subdir] = cms
 
