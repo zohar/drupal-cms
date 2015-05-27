@@ -61,10 +61,10 @@ dependencies[] = uuid_features
 dependencies[] = views
 dependencies[] = views_ui
 
-variables[theme_default] = nexus
+variables[theme_default] = multipurpose
 variables[admin_theme] = seven
 variables[node_admin_theme] = 1
-theme = nexus
+theme = multipurpose
 
 variables[fences_default_classes] = 1
 variables[fences_default_markup] = 1
@@ -83,7 +83,6 @@ variables[user_picture_file_size] = 1
 variables[user_picture_style] = thumbnail
 variables[user_pictures] = 1
 variables[user_register] = USER_REGISTER_ADMINISTRATORS_ONLY
-
 
 ; CMS Blog
 ; -------
@@ -112,10 +111,11 @@ dependencies[] = date_all_day
 dependencies[] = libraries
 variables[pathauto_node_event_pattern] = [node:title]
 
-; CMS News
+; CMS Event Registrations
 ; -------
 
-dependencies[] = cms_news
+dependencies[] = cms_event_registrations
+dependencies[] = registration
 
 ; CMS Performance
 ; -------
@@ -130,16 +130,6 @@ variables[page_compression] = 1
 variables[preprocess_css] = 1
 variables[preprocess_js] = 1
 
-; CMS Portfolio
-; -------
-
-dependencies[] = cms_portfolio
-dependencies[] = image_field_caption
-dependencies[] = image_url_formatter
-dependencies[] = libraries
-
-dependencies[] = views_bootstrap
-
 ; CMS WYSIWYG
 ; -------
 
@@ -150,3 +140,18 @@ dependencies[] = wysiwyg
 dependencies[] = bs_shortcodes
 dependencies[] = sooperthemes_basic_elements
 dependencies[] = shortcode
+
+; CMS News
+; -------
+
+dependencies[] = cms_news
+
+; CMS Portfolio
+; -------
+
+dependencies[] = cms_portfolio
+dependencies[] = image_field_caption
+dependencies[] = image_url_formatter
+dependencies[] = libraries
+
+dependencies[] = views_bootstrap

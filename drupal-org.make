@@ -5,11 +5,12 @@ core = 7.x
 ; Modules
 ; -------
 
+projects[cms_core][subdir] = cms
+
 projects[libraries][subdir] = contrib
 projects[libraries][version] = "2.2"
 
 projects[ctools][subdir] = contrib
-projects[ctools][version] = "1.4"
 
 projects[bean][subdir] = contrib
 
@@ -21,8 +22,25 @@ projects[elements][subdir] = contrib
 
 projects[entity][subdir] = contrib
 
+projects[entitycache][subdir] = contrib
+
 projects[features][subdir] = contrib
 projects[features][version] = "2.x-dev"
+; Patch for UUID menu link export
+projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-5-D7.patch"
+; Nice in the future, patch for copying files, works with uuid_features --dev
+projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
+; https://www.drupal.org/node/2428617#comment-9636493
+
+projects[uuid][subdir] = contrib
+projects[uuid][version] = "1.x-dev"
+
+projects[uuid_features][subdir] = contrib
+; The dev version is needed with the abovementioned features patch but is VERY BUGGY
+projects[uuid_features][version] = "1.x-dev"
+; Patch by me to fix the very buggy bugs:
+projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/fix-packaged-files-2488804-3.patch"
+
 
 projects[features_override][subdir] = contrib
 
@@ -38,9 +56,6 @@ projects[honeypot][subdir] = contrib
 projects[html5_tools][subdir] = contrib
 projects[html5_tools][version] = "1.2"
 
-projects[image_field_caption][subdir] = contrib
-projects[image_field_caption][version] = "1.x-dev"
-
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = "2.4"
 
@@ -53,24 +68,12 @@ projects[metatag_views_overview][version] = "1.x-dev"
 
 projects[module_filter][subdir] = contrib
 
-projects[node_export][subdir] = contrib
-
-projects[node_class][subdir] = contrib
-projects[node_class][version] = "1.3"
-; projects[node_class][patch][] = "https://www.drupal.org/files/issues/node_class-big_feature_update_code_cleanup.patch"
-
 projects[pathauto][subdir] = contrib
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = contrib
-
-projects[uuid][subdir] = contrib
-projects[uuid][version] = "1.x-dev"
-
-projects[uuid_features][subdir] = contrib
-projects[uuid_features][version] = "1.x-dev"
 
 projects[views][subdir] = contrib
 
@@ -80,64 +83,43 @@ projects[bootstrap][download][url] = "http://git.drupal.org/project/bootstrap.gi
 projects[bootstrap][download][revision] = "de0608d0ff712597f31d3eaac27abaf1f6fdb934"
 
 projects[] = "cms_bootstrap3"
-projects[] = "nexus"
-
-projects[cms_core][subdir] = cms
-
+projects[] = multipurpose
 
 ; CMS Blog
 ; -------
 
-projects[tagclouds][subdir] = contrib
-
 projects[cms_blog][subdir] = cms
+projects[tagclouds][subdir] = contrib
 
 ; CMS Contact
 ; -------
 
-projects[webform][subdir] = contrib
-
 projects[cms_contact][subdir] = cms
+projects[webform][subdir] = contrib
 
 ; CMS Events
 ; -------
 
+projects[cms_events][subdir] = cms
+
 projects[addressfield][subdir] = contrib
-projects[addressfield][version] = "1.0-beta5"
 
 projects[addressfield_tokens][subdir] = contrib
 
 projects[date][subdir] = contrib
 
-projects[cms_events][subdir] = cms
-
 ; CMS Event Registrations
 ; -------
 
+projects[cms_event_registrations][subdir] = cms
 projects[registration][subdir] = contrib
-
-; CMS News
-; -------
-
-projects[cms_news][subdir] = cms
+projects[registration][version] = "1.x-dev"
 
 ; CMS Performance
 ; -------
 
-projects[entitycache][subdir] = contrib
-
 projects[cms_performance][subdir] = cms
-
-; CMS Portfolio
-; -------
-
-projects[views_bootstrap][subdir] = contrib
-projects[views_bootstrap][version] = "3.x-dev"
-projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
-
-projects[image_url_formatter][subdir] = contrib
-
-projects[cms_portfolio][subdir] = cms
+projects[entitycache][subdir] = contrib
 
 ; CMS WYSIWYG
 ; -------
@@ -149,9 +131,6 @@ projects[media][version] = "2.0-alpha4"
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = "2.x-dev"
-
-projects[wysiwyg_filter][subdir] = contrib
-projects[wysiwyg_filter][version] = "1.x-dev"
 
 projects[shortcode][subdir] = contrib
 
@@ -174,3 +153,22 @@ projects[block_shortcode][download][revision] = aaab3b4443532bb9997791b7cf611b7a
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
+
+; CMS News
+; -------
+
+projects[cms_news][subdir] = cms
+
+; CMS Portfolio
+; -------
+
+
+projects[cms_portfolio][subdir] = cms
+
+projects[image_field_caption][subdir] = contrib
+
+projects[views_bootstrap][subdir] = contrib
+projects[views_bootstrap][version] = "3.x-dev"
+projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
+
+projects[image_url_formatter][subdir] = contrib
