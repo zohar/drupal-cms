@@ -31,10 +31,6 @@ projects[fences][version] = "1.x-dev"
 
 projects[file_entity][subdir] = contrib
 
-projects[filefield_sources][subdir] = contrib
-
-projects[filefield_sources_plupload][subdir] = contrib
-
 projects[globalredirect][subdir] = contrib
 
 projects[honeypot][subdir] = contrib
@@ -64,8 +60,6 @@ projects[node_class][version] = "1.3"
 ; projects[node_class][patch][] = "https://www.drupal.org/files/issues/node_class-big_feature_update_code_cleanup.patch"
 
 projects[pathauto][subdir] = contrib
-
-projects[plupload][subdir] = contrib
 
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = "2.0"
@@ -108,12 +102,6 @@ projects[cms_contact][subdir] = cms
 ; CMS Events
 ; -------
 
-projects[plupload][subdir] = contrib
-
-projects[filefield_sources][subdir] = contrib
-
-projects[filefield_sources_plupload][subdir] = contrib
-
 projects[addressfield][subdir] = contrib
 projects[addressfield][version] = "1.0-beta5"
 
@@ -122,10 +110,6 @@ projects[addressfield_tokens][subdir] = contrib
 projects[date][subdir] = contrib
 
 projects[cms_events][subdir] = cms
-
-libraries[plupload][download][type] = "get"
-libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-libraries[plupload][directory_name] = "plupload"
 
 ; CMS Event Registrations
 ; -------
@@ -147,40 +131,36 @@ projects[cms_performance][subdir] = cms
 ; CMS Portfolio
 ; -------
 
-projects[plupload][subdir] = contrib
-
-projects[filefield_sources][subdir] = contrib
-
-projects[filefield_sources_plupload][subdir] = contrib
-
 projects[views_bootstrap][subdir] = contrib
 projects[views_bootstrap][version] = "3.x-dev"
 projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
 
 projects[image_url_formatter][subdir] = contrib
 
-libraries[plupload][download][type] = "get"
-libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-libraries[plupload][directory_name] = "plupload"
-
 projects[cms_portfolio][subdir] = cms
 
 ; CMS WYSIWYG
 ; -------
 
+projects[cms_wysiwyg][subdir] = cms
+
 projects[media][subdir] = contrib
-projects[media][version] = "2.x-dev"
+projects[media][version] = "2.0-alpha4"
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = "2.x-dev"
 
+projects[wysiwyg_filter][subdir] = contrib
+projects[wysiwyg_filter][version] = "1.x-dev"
+
 projects[shortcode][subdir] = contrib
 
 projects[shortcode_wysiwyg][subdir] = contrib
+projects[shortcode_wysiwyg][patch][] = "https://www.drupal.org/files/issues/https-%3A%3Awww.drupal.org%3Afiles%3Aissues%3Ashortcode_wysiwyg-supported_forms-2016669-9.patch"
 
 projects[jsdelivr][subdir] = contrib
 
-projects[sooperthemes_basic_shortcodes][subdir] = contrib
+projects[sooperthemes_basic_elements][subdir] = contrib
 
 projects[bs_shortcodes][subdir] = contrib
 
@@ -194,5 +174,3 @@ projects[block_shortcode][download][revision] = aaab3b4443532bb9997791b7cf611b7a
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
-
-projects[cms_wysiwyg][subdir] = cms

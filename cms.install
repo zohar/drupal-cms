@@ -4,7 +4,7 @@
 if (ini_get('memory_limit') != '-1' && ini_get('memory_limit') <= '196M' && ini_get('memory_limit') >= '32M') {
   ini_set('memory_limit', '196M');
 }
-ini_set('max_execution_time', '120');
+ini_set('max_execution_time', '240');
 $max_nesting_level = ini_get('xdebug.max_nesting_level');
 if ($max_nesting_level > 0 && $max_nesting_level <= '200') {
   ini_set('xdebug.max_nesting_level', 200);
@@ -14,16 +14,12 @@ function cms_install(&$tasks, &$install_state) {
 
   $cms_theme = 'nexus';
 
+  module_enable(array('cms_contact_content'));
   module_enable(array('cms_blog_content'));
-
   module_enable(array('cms_events_content'));
-
   module_enable(array('cms_news_content'));
-
   module_enable(array('cms_portfolio_content'));
-
   module_enable(array('cms_core_content'));
-
   // install blocks, we need to do it here because the install files inside
   // the modules run to early in the installation process for this to work.
   $values = array();
@@ -165,7 +161,7 @@ function cms_install(&$tasks, &$install_state) {
       'pages' => '<front>',
       'title' => '',
       'cache' => '-1',
-      'css_class' => 'clear-both',
+      'css_class' => 'cms-core-util-clear-both',
     );
   }
 

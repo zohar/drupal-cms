@@ -43,6 +43,7 @@ dependencies[] = ctools
 dependencies[] = elements
 dependencies[] = entity
 dependencies[] = features
+dependencies[] = features_override
 dependencies[] = fences
 dependencies[] = file_entity
 dependencies[] = globalredirect
@@ -59,10 +60,12 @@ dependencies[] = uuid
 dependencies[] = uuid_features
 dependencies[] = views
 dependencies[] = views_ui
-variables[admin_theme] = seven
-variables[node_admin_theme] = 0
+
 variables[theme_default] = nexus
+variables[admin_theme] = seven
+variables[node_admin_theme] = 1
 theme = nexus
+
 variables[fences_default_classes] = 1
 variables[fences_default_markup] = 1
 variables[honeypot_protect_all_forms] = 1
@@ -71,7 +74,6 @@ variables[html5_tools_override_views_field_rewrite_elements] = 1
 variables[image_jpeg_quality] = 100
 variables[jquery_update_jquery_cdn] = google
 variables[jquery_update_jquery_version] = 1.8
-variables[site_name] = Powerstart
 variables[update_check_disabled] = 0
 variables[update_check_frequency] = 1
 variables[update_notification_threshold] = security
@@ -107,8 +109,6 @@ dependencies[] = date_api
 dependencies[] = date_views
 dependencies[] = date_popup
 dependencies[] = date_all_day
-dependencies[] = filefield_sources
-dependencies[] = filefield_sources_plupload
 dependencies[] = libraries
 variables[pathauto_node_event_pattern] = [node:title]
 
@@ -134,23 +134,19 @@ variables[preprocess_js] = 1
 ; -------
 
 dependencies[] = cms_portfolio
-dependencies[] = filefield_sources
-dependencies[] = filefield_sources_plupload
 dependencies[] = image_field_caption
 dependencies[] = image_url_formatter
 dependencies[] = libraries
-dependencies[] = plupload
+
 dependencies[] = views_bootstrap
 
 ; CMS WYSIWYG
 ; -------
 
-dependencies[] = block_shortcode
-dependencies[] = bs_shortcodes
 dependencies[] = cms_wysiwyg
 dependencies[] = media
 dependencies[] = media_internet
-dependencies[] = shortcode
-dependencies[] = shortcode_wysiwyg
-dependencies[] = sooperthemes_basic_shortcodes
 dependencies[] = wysiwyg
+dependencies[] = bs_shortcodes
+dependencies[] = sooperthemes_basic_elements
+dependencies[] = shortcode
