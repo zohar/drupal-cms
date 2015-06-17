@@ -28,19 +28,14 @@ projects[features][subdir] = contrib
 projects[features][version] = "2.x-dev"
 ; Patch for UUID menu link export
 projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-5-D7.patch"
-; Nice in the future, patch for copying files, works with uuid_features --dev
-projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
-; https://www.drupal.org/node/2428617#comment-9636493
+; ~update 08/06/2015 patch is committed projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
 
 projects[uuid][subdir] = contrib
 projects[uuid][version] = "1.x-dev"
 
 projects[uuid_features][subdir] = contrib
-; The dev version is needed with the abovementioned features patch but is VERY BUGGY
 projects[uuid_features][version] = "1.x-dev"
-; Patch by me to fix the very buggy bugs:
-projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/fix-packaged-files-2488804-3.patch"
-
+; ~update 03/06/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/fix-packaged-files-2488804-3.patch"
 
 projects[features_override][subdir] = contrib
 
