@@ -90,6 +90,8 @@ variables[user_register] = USER_REGISTER_ADMINISTRATORS_ONLY
 ; -------
 
 dependencies[] = cms_blog
+dependencies[] = media
+dependencies[] = media_internet
 dependencies[] = tagclouds
 
 ; CMS Contact
@@ -111,6 +113,8 @@ dependencies[] = date_views
 dependencies[] = date_popup
 dependencies[] = date_all_day
 dependencies[] = libraries
+dependencies[] = media
+dependencies[] = media_internet
 variables[pathauto_node_event_pattern] = [node:title]
 
 ; CMS Event Registrations
@@ -147,6 +151,8 @@ dependencies[] = shortcode
 ; -------
 
 dependencies[] = cms_news
+dependencies[] = media
+dependencies[] = media_internet
 
 ; CMS Portfolio
 ; -------
@@ -155,5 +161,6 @@ dependencies[] = cms_portfolio
 dependencies[] = image_field_caption
 dependencies[] = image_url_formatter
 dependencies[] = libraries
-
+dependencies[] = media
+dependencies[] = media_internet
 dependencies[] = views_bootstrap

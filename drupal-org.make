@@ -8,11 +8,12 @@ core = 7.x
 projects[cms_core][subdir] = cms
 
 projects[libraries][subdir] = contrib
-projects[libraries][version] = "2.2"
 
 projects[ctools][subdir] = contrib
 
 projects[bean][subdir] = contrib
+
+projects[behavior_weights][subdir] = contrib
 
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.1"
@@ -35,6 +36,7 @@ projects[uuid][version] = "1.x-dev"
 
 projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.x-dev"
+; ~update 19/07/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/uuid_features-2533316-1-EntityMalformedException-when-used-tog.patch"
 ; ~update 03/06/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/fix-packaged-files-2488804-3.patch"
 
 projects[features_override][subdir] = contrib
@@ -44,15 +46,15 @@ projects[fences][version] = "1.x-dev"
 
 projects[file_entity][subdir] = contrib
 
+projects[field_group][subdir] = contrib
+
 projects[globalredirect][subdir] = contrib
 
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][subdir] = contrib
-projects[html5_tools][version] = "1.2"
 
 projects[jquery_update][subdir] = contrib
-projects[jquery_update][version] = "2.4"
 
 projects[menu_block][subdir] = contrib
 
@@ -66,19 +68,19 @@ projects[module_filter][subdir] = contrib
 projects[pathauto][subdir] = contrib
 
 projects[strongarm][subdir] = contrib
-projects[strongarm][version] = "2.0"
 
 projects[token][subdir] = contrib
 
 projects[views][subdir] = contrib
 
-projects[bootstrap][version] = "3.x-dev"
-projects[bootstrap][download][type] = "git"
-projects[bootstrap][download][url] = "http://git.drupal.org/project/bootstrap.git"
-projects[bootstrap][download][revision] = "de0608d0ff712597f31d3eaac27abaf1f6fdb934"
+projects[bootstrap][type] = theme
+projects[bootstrap][download][type] = git
+projects[bootstrap][download][branch] = "7.x-3.x"
+projects[bootstrap][download][url] = http://git.drupal.org/project/bootstrap.git
+projects[bootstrap][download][revision] = 597c3be4fb74952fa1df0ffa39f5e79dd40c614f
 
 projects[] = "cms_bootstrap3"
-projects[] = multipurpose
+projects[] = nexus
 
 ; CMS Blog
 ; -------
@@ -110,11 +112,30 @@ projects[cms_event_registrations][subdir] = cms
 projects[registration][subdir] = contrib
 projects[registration][version] = "1.x-dev"
 
+; CMS News
+; -------
+
+projects[cms_news][subdir] = cms
+
 ; CMS Performance
 ; -------
 
 projects[cms_performance][subdir] = cms
 projects[entitycache][subdir] = contrib
+
+; CMS Portfolio
+; -------
+
+
+projects[cms_portfolio][subdir] = cms
+
+projects[image_field_caption][subdir] = contrib
+
+projects[views_bootstrap][subdir] = contrib
+projects[views_bootstrap][version] = "3.x-dev"
+projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
+
+projects[image_url_formatter][subdir] = contrib
 
 ; CMS WYSIWYG
 ; -------
@@ -138,25 +159,13 @@ projects[sooperthemes_basic_elements][subdir] = contrib
 
 projects[bs_shortcodes][subdir] = contrib
 
+projects[block_shortcode][type] = module
+projects[block_shortcode][subdir] = sandboxes
+projects[block_shortcode][download][type] = git
+projects[block_shortcode][download][branch] = "7.x-1.x"
+projects[block_shortcode][download][url] = http://git.drupal.org/sandbox/SeanFitzpatrick/2219069.git
+projects[block_shortcode][download][revision] = aaab3b4443532bb9997791b7cf611b7a284c4914
+
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
-
-; CMS News
-; -------
-
-projects[cms_news][subdir] = cms
-
-; CMS Portfolio
-; -------
-
-
-projects[cms_portfolio][subdir] = cms
-
-projects[image_field_caption][subdir] = contrib
-
-projects[views_bootstrap][subdir] = contrib
-projects[views_bootstrap][version] = "3.x-dev"
-projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
-
-projects[image_url_formatter][subdir] = contrib
