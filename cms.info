@@ -45,17 +45,29 @@ dependencies[] = entity
 dependencies[] = features
 dependencies[] = features_override
 dependencies[] = fences
+dependencies[] = field_collection
+dependencies[] = field_formatter_class
+dependencies[] = field_formatter_settings
+dependencies[] = field_group
 dependencies[] = file_entity
 dependencies[] = globalredirect
 dependencies[] = html5_tools
+dependencies[] = image_hover_effects
+dependencies[] = jquery_update
 dependencies[] = honeypot
+dependencies[] = link
 dependencies[] = media
 dependencies[] = media_internet
+dependencies[] = media_bulk_upload
+dependencies[] = menu_block
 dependencies[] = metatag
 dependencies[] = metatag_views
 dependencies[] = metatag_views_overview
 dependencies[] = module_filter
+dependencies[] = multiform
 dependencies[] = pathauto
+dependencies[] = plupload
+dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = token
 dependencies[] = uuid
@@ -63,10 +75,10 @@ dependencies[] = uuid_features
 dependencies[] = views
 dependencies[] = views_ui
 
-variables[theme_default] = multipurpose
+variables[theme_default] = nexus
 variables[admin_theme] = seven
 variables[node_admin_theme] = 1
-theme = multipurpose
+theme = nexus
 
 variables[fences_default_classes] = 1
 variables[fences_default_markup] = 1
@@ -81,7 +93,6 @@ variables[update_check_frequency] = 1
 variables[update_notification_threshold] = security
 variables[user_picture_default] = profiles/cms/def-profile-pic.png
 variables[user_picture_dimensions] = 1024x1024
-variables[user_picture_file_size] = 1
 variables[user_picture_style] = thumbnail
 variables[user_pictures] = 1
 variables[user_register] = USER_REGISTER_ADMINISTRATORS_ONLY
@@ -123,6 +134,13 @@ variables[pathauto_node_event_pattern] = [node:title]
 dependencies[] = cms_event_registrations
 dependencies[] = registration
 
+; CMS News
+; -------
+
+dependencies[] = cms_news
+dependencies[] = media
+dependencies[] = media_internet
+
 ; CMS Performance
 ; -------
 
@@ -136,6 +154,16 @@ variables[page_compression] = 1
 variables[preprocess_css] = 1
 variables[preprocess_js] = 1
 
+; CMS Portfolio
+; -------
+
+dependencies[] = cms_portfolio
+dependencies[] = image_field_caption
+dependencies[] = libraries
+dependencies[] = media
+dependencies[] = media_internet
+dependencies[] = views_bootstrap
+
 ; CMS WYSIWYG
 ; -------
 
@@ -146,21 +174,3 @@ dependencies[] = wysiwyg
 dependencies[] = bs_shortcodes
 dependencies[] = sooperthemes_basic_elements
 dependencies[] = shortcode
-
-; CMS News
-; -------
-
-dependencies[] = cms_news
-dependencies[] = media
-dependencies[] = media_internet
-
-; CMS Portfolio
-; -------
-
-dependencies[] = cms_portfolio
-dependencies[] = image_field_caption
-dependencies[] = image_url_formatter
-dependencies[] = libraries
-dependencies[] = media
-dependencies[] = media_internet
-dependencies[] = views_bootstrap

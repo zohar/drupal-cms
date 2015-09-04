@@ -24,7 +24,7 @@ function cms_install(&$tasks, &$install_state) {
   // the modules run to early in the installation process for this to work.
   $values = array();
 
-  if (module_exists('cms_core_content')) {
+    if (module_exists('cms_core_content')) {
     $values[] = array(
       'module' => 'bean',
       'delta' => 'preblock-1-time-saver-icon-white',
@@ -81,7 +81,7 @@ function cms_install(&$tasks, &$install_state) {
     );
     $values[] = array(
       'module' => 'tagclouds',
-      'delta' => '1',
+      'delta' => '2',
       'theme' => $cms_theme,
       'status' => '1',
       'visibility' => '1',
@@ -90,7 +90,7 @@ function cms_install(&$tasks, &$install_state) {
       'pages' => "blog\nblog/*\ntags/*",
       'title' => 'Tags',
       'cache' => '-1',
-      'css_class' => 'well',
+      'css_class' => '',
     );
     $values[] = array(
       'module' => 'views',
