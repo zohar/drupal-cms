@@ -5,15 +5,13 @@ core = 7.x
 ; Modules
 ; -------
 
-projects[cms_core][subdir] = cms
+;projects[cms_core][subdir] = cms
 
 projects[libraries][subdir] = contrib
 
 projects[ctools][subdir] = contrib
 
 projects[bean][subdir] = contrib
-
-projects[behavior_weights][subdir] = contrib
 
 projects[block_class][subdir] = contrib
 projects[block_class][version] = "2.1"
@@ -26,7 +24,7 @@ projects[entity][subdir] = contrib
 projects[entitycache][subdir] = contrib
 
 projects[features][subdir] = contrib
-projects[features][version] = "2.x-dev"
+; projects[features][version] = "2.x-dev"
 ; Patch for UUID menu link export
 projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-5-D7.patch"
 ; ~update 08/06/2015 patch is committed projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
@@ -46,6 +44,12 @@ projects[fences][version] = "1.x-dev"
 
 projects[file_entity][subdir] = contrib
 
+projects[field_collection][subdir] = contrib
+
+projects[field_formatter_class][subdir] = contrib
+
+projects[field_formatter_settings][subdir] = contrib
+
 projects[field_group][subdir] = contrib
 
 projects[globalredirect][subdir] = contrib
@@ -54,7 +58,15 @@ projects[honeypot][subdir] = contrib
 
 projects[html5_tools][subdir] = contrib
 
+projects[image_hover_effects][subdir] = contrib
+
 projects[jquery_update][subdir] = contrib
+
+projects[link][subdir] = contrib
+
+projects[media][subdir] = contrib
+projects[media][version] = "2.0-alpha4"
+projects[media][patch][] = "https://www.drupal.org/files/issues/allow_selecting_of-951004-136.patch"
 
 projects[menu_block][subdir] = contrib
 
@@ -65,13 +77,27 @@ projects[metatag_views_overview][version] = "1.x-dev"
 
 projects[module_filter][subdir] = contrib
 
+projects[multiform][subdir] = contrib
+
 projects[pathauto][subdir] = contrib
 
+projects[plupload][subdir] = contrib
+
+projects[smart_trim][subdir] = contrib
+
 projects[strongarm][subdir] = contrib
+
+projects[special_menu_items][subdir] = contrib
 
 projects[token][subdir] = contrib
 
 projects[views][subdir] = contrib
+
+projects[views_bootstrap][subdir] = contrib
+projects[views_bootstrap][version] = "3.x-dev"
+projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
+
+projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
 projects[bootstrap][download][type] = git
@@ -80,12 +106,19 @@ projects[bootstrap][download][url] = http://git.drupal.org/project/bootstrap.git
 projects[bootstrap][download][revision] = 597c3be4fb74952fa1df0ffa39f5e79dd40c614f
 
 projects[] = "cms_bootstrap3"
+
+libraries[plupload][download][type] = "get"
+libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
+libraries[plupload][patch][1903850] = "https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch"
 projects[] = nexus
 
 ; CMS Blog
 ; -------
 
 projects[cms_blog][subdir] = cms
+
+projects[service_links][subdir] = contrib
+
 projects[tagclouds][subdir] = contrib
 
 ; CMS Contact
@@ -110,7 +143,7 @@ projects[date][subdir] = contrib
 
 projects[cms_event_registrations][subdir] = cms
 projects[registration][subdir] = contrib
-projects[registration][version] = "1.x-dev"
+; projects[registration][version] = "1.x-dev"
 
 ; CMS News
 ; -------
@@ -130,20 +163,12 @@ projects[entitycache][subdir] = contrib
 projects[cms_portfolio][subdir] = cms
 
 projects[image_field_caption][subdir] = contrib
-
-projects[views_bootstrap][subdir] = contrib
-projects[views_bootstrap][version] = "3.x-dev"
-projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
-
-projects[image_url_formatter][subdir] = contrib
+projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/views_strip_caption-2345635-8.patch"
 
 ; CMS WYSIWYG
 ; -------
 
 projects[cms_wysiwyg][subdir] = cms
-
-projects[media][subdir] = contrib
-projects[media][version] = "2.0-alpha4"
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = "2.x-dev"
@@ -151,7 +176,8 @@ projects[wysiwyg][version] = "2.x-dev"
 projects[shortcode][subdir] = contrib
 
 projects[shortcode_wysiwyg][subdir] = contrib
-projects[shortcode_wysiwyg][patch][] = "https://www.drupal.org/files/issues/https-%3A%3Awww.drupal.org%3Afiles%3Aissues%3Ashortcode_wysiwyg-supported_forms-2016669-9.patch"
+; patch committed
+; projects[shortcode_wysiwyg][patch][] = "https://www.drupal.org/files/issues/https-%3A%3Awww.drupal.org%3Afiles%3Aissues%3Ashortcode_wysiwyg-supported_forms-2016669-9.patch"
 
 projects[jsdelivr][subdir] = contrib
 
