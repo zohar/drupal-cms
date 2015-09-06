@@ -5,7 +5,7 @@ core = 7.x
 ; Modules
 ; -------
 
-;projects[cms_core][subdir] = cms
+projects[cms_core][subdir] = cms
 
 projects[libraries][subdir] = contrib
 
