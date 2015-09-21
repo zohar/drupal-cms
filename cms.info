@@ -36,43 +36,51 @@ dependencies[] = user
 
 ; CMS Core
 ; ----
-dependencies[] = bean
-dependencies[] = block_class
+
 dependencies[] = cms_core
+dependencies[] = bean
+dependencies[] = bean_admin_ui
+dependencies[] = bean_entitycache
+dependencies[] = bean_uuid
+dependencies[] = block_class
 dependencies[] = ctools
-dependencies[] = elements
 dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = entity_view_mode
+dependencies[] = entitycache
 dependencies[] = features
-dependencies[] = features_override
 dependencies[] = fences
-dependencies[] = field_collection
 dependencies[] = field_formatter_class
 dependencies[] = field_formatter_settings
 dependencies[] = field_group
+dependencies[] = field_ui
+dependencies[] = file
 dependencies[] = file_entity
 dependencies[] = globalredirect
-dependencies[] = html5_tools
-dependencies[] = image_hover_effects
-dependencies[] = jquery_update
 dependencies[] = honeypot
-dependencies[] = link
+dependencies[] = html5_tools
+dependencies[] = image
+dependencies[] = jquery_update
+dependencies[] = libraries
 dependencies[] = media
-dependencies[] = media_internet
 dependencies[] = media_bulk_upload
-dependencies[] = menu_block
+dependencies[] = media_internet
+dependencies[] = menu
 dependencies[] = metatag
 dependencies[] = metatag_views
 dependencies[] = metatag_views_overview
-dependencies[] = module_filter
 dependencies[] = multiform
+dependencies[] = node
+dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = plupload
+dependencies[] = search
 dependencies[] = smart_trim
 dependencies[] = strongarm
-dependencies[] = token
+dependencies[] = text
 dependencies[] = uuid
 dependencies[] = uuid_features
-dependencies[] = views
+dependencies[] = views_fieldsets
 dependencies[] = views_ui
 
 variables[theme_default] = nexus
@@ -158,11 +166,19 @@ variables[preprocess_js] = 1
 ; -------
 
 dependencies[] = cms_portfolio
+dependencies[] = field_collection
+dependencies[] = field_formatter_class
+dependencies[] = field_formatter_settings
+dependencies[] = field_group
 dependencies[] = image_field_caption
-dependencies[] = libraries
+dependencies[] = image_hover_effects
+dependencies[] = link
 dependencies[] = media
 dependencies[] = media_internet
+dependencies[] = smart_trim
+dependencies[] = views
 dependencies[] = views_bootstrap
+dependencies[] = views_fieldsets
 
 ; CMS WYSIWYG
 ; -------

@@ -21,6 +21,8 @@ projects[elements][subdir] = contrib
 
 projects[entity][subdir] = contrib
 
+projects[entity_view_mode][subdir] = contrib
+
 projects[entitycache][subdir] = contrib
 
 projects[features][subdir] = contrib
