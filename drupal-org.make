@@ -103,6 +103,7 @@ projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_b
 projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
+projects[glazed_free][type] = theme
 
 libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
