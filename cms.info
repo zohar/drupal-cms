@@ -1,6 +1,7 @@
-name = cms
+name = Glazed Drupal CMS
 distribution_name = cms
 description = Drupal distribution with production ready CMS features
+version = 7.x-1.0
 core = 7.x
 
 ; Core
@@ -34,20 +35,51 @@ dependencies[] = toolbar
 dependencies[] = update
 dependencies[] = user
 
+; CMS Installation Profile
+; ----
+dependencies[] = module_filter
+
+variables[theme_default] = glazed_free
+variables[admin_theme] = seven
+variables[node_admin_theme] = 1
+theme = glazed_free
+
+; Performance Stuff on!
+variables[block_cache] = 1
+variables[cache] = 1
+variables[page_cache_maximum_age] = 86400
+variables[page_compression] = 1
+variables[preprocess_css] = 1
+variables[preprocess_js] = 1
+
+; Other Configuration
+variables[entity_rebuild_on_flush] = 0
+variables[features_rebuild_on_flush] = 0
+variables[fences_default_classes] = 1
+variables[fences_default_markup] = 1
+variables[html5_tools_override_views_field_rewrite_elements] = 1
+variables[image_jpeg_quality] = 100
+variables[jquery_update_jquery_cdn] = google
+variables[jquery_update_jquery_version] = 1.9
+variables[update_check_disabled] = 0
+variables[update_check_frequency] = 1
+variables[update_notification_threshold] = security
+variables[user_picture_default] = profiles/cms/def-profile-pic.png
+variables[user_picture_dimensions] = 1024x1024
+variables[user_picture_style] = thumbnail
+variables[user_pictures] = 1
+variables[user_register] = USER_REGISTER_ADMINISTRATORS_ONLY
+
 ; CMS Core
 ; ----
-
-dependencies[] = cms_core
 dependencies[] = bean
 dependencies[] = bean_admin_ui
-dependencies[] = bean_entitycache
 dependencies[] = bean_uuid
 dependencies[] = block_class
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = entity_view_mode
-dependencies[] = entitycache
 dependencies[] = features
 dependencies[] = fences
 dependencies[] = field_formatter_class
@@ -57,7 +89,6 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = file_entity
 dependencies[] = globalredirect
-dependencies[] = honeypot
 dependencies[] = html5_tools
 dependencies[] = image
 dependencies[] = jquery_update
@@ -66,9 +97,6 @@ dependencies[] = media
 dependencies[] = media_bulk_upload
 dependencies[] = media_internet
 dependencies[] = menu
-dependencies[] = metatag
-dependencies[] = metatag_views
-dependencies[] = metatag_views_overview
 dependencies[] = multiform
 dependencies[] = node
 dependencies[] = path
@@ -83,28 +111,6 @@ dependencies[] = uuid_features
 dependencies[] = views_fieldsets
 dependencies[] = views_ui
 
-variables[theme_default] = nexus
-variables[admin_theme] = seven
-variables[node_admin_theme] = 1
-theme = nexus
-
-variables[fences_default_classes] = 1
-variables[fences_default_markup] = 1
-variables[honeypot_protect_all_forms] = 1
-variables[honeypot_protect_all_forms] = 1
-variables[html5_tools_override_views_field_rewrite_elements] = 1
-variables[image_jpeg_quality] = 100
-variables[jquery_update_jquery_cdn] = google
-variables[jquery_update_jquery_version] = 1.8
-variables[update_check_disabled] = 0
-variables[update_check_frequency] = 1
-variables[update_notification_threshold] = security
-variables[user_picture_default] = profiles/cms/def-profile-pic.png
-variables[user_picture_dimensions] = 1024x1024
-variables[user_picture_style] = thumbnail
-variables[user_pictures] = 1
-variables[user_register] = USER_REGISTER_ADMINISTRATORS_ONLY
-
 ; CMS Blog
 ; -------
 
@@ -112,13 +118,6 @@ dependencies[] = cms_blog
 dependencies[] = media
 dependencies[] = media_internet
 dependencies[] = tagclouds
-
-; CMS Contact
-; -------
-
-dependencies[] = cms_contact
-dependencies[] = webform
-variables[pathauto_node_webform_pattern] = [node:title]
 
 ; CMS Events
 ; -------
@@ -134,59 +133,24 @@ dependencies[] = date_all_day
 dependencies[] = libraries
 dependencies[] = media
 dependencies[] = media_internet
-variables[pathauto_node_event_pattern] = [node:title]
-
-; CMS Event Registrations
-; -------
-
-dependencies[] = cms_event_registrations
 dependencies[] = registration
+variables[pathauto_node_event_pattern] = [node:title]
 
 ; CMS News
 ; -------
 
 dependencies[] = cms_news
-dependencies[] = media
-dependencies[] = media_internet
-
-; CMS Performance
-; -------
-
-dependencies[] = cms_performance
-dependencies[] = entitycache
-variables[block_cache] = 1
-variables[cache] = 1
-variables[entitycache_enabled] = 1
-variables[page_cache_maximum_age] = 86400
-variables[page_compression] = 1
-variables[preprocess_css] = 1
-variables[preprocess_js] = 1
 
 ; CMS Portfolio
 ; -------
 
 dependencies[] = cms_portfolio
-dependencies[] = field_collection
-dependencies[] = field_formatter_class
-dependencies[] = field_formatter_settings
-dependencies[] = field_group
 dependencies[] = image_field_caption
 dependencies[] = image_hover_effects
-dependencies[] = link
-dependencies[] = media
-dependencies[] = media_internet
-dependencies[] = smart_trim
-dependencies[] = views
 dependencies[] = views_bootstrap
-dependencies[] = views_fieldsets
 
 ; CMS WYSIWYG
 ; -------
 
 dependencies[] = cms_wysiwyg
-dependencies[] = media
-dependencies[] = media_internet
 dependencies[] = wysiwyg
-dependencies[] = bs_shortcodes
-dependencies[] = sooperthemes_basic_elements
-dependencies[] = shortcode

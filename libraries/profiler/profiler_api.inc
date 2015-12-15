@@ -7,7 +7,18 @@
  *   The config array for a Profiler Install Profile.
  */
 function profiler_install_tasks($config) {
-  return array('profiler_install_profile_complete' => array());
+  $tasks['cms_import_demo_form'] = array(
+    'display_name' => st('Select Demo Content'),
+    'type' => 'form',
+    'display' => TRUE,
+  );
+  $tasks['cms_install_additional_modules'] = array(
+    'display_name' => st('Import Demo Content'),
+    'type' => 'batch',
+    'display' => TRUE,
+  );
+  $tasks['profiler_install_profile_complete'] = array();
+  return $tasks;
 }
 
 /**
@@ -17,8 +28,10 @@ function profiler_install_tasks($config) {
  *   The config array for a Profiler Install Profile.
  */
 function profiler_install_tasks_alter($config, &$tasks, $install_state) {
-  // Replace the modules profile task function with our custom callback.
+  // Add profiler complete task which takes care of variables and theme defaults
   $tasks['install_profile_modules']['function'] = 'profiler_install_profile_modules';
+  // Replace the code install_finish task with a custom function
+  $tasks['install_finished']['function'] = 'cms_install_finished';
 }
 
 
@@ -32,6 +45,7 @@ function profiler_install_tasks_alter($config, &$tasks, $install_state) {
  *   The batch definition.
  */
 function profiler_install_profile_modules(&$install_state) {
+  variable_set('cms_installer_t1', microtime(TRUE));
   $profile_name = $install_state['parameters']['profile'];
   $config = profiler_v2_load_config($profile_name);
 
@@ -73,6 +87,8 @@ function profiler_system_info_alter(&$info, $file, $type) {
  *   An array of information about the current installation state.
  */
 function profiler_install_profile_complete(&$install_state) {
+  $t1 = (int) microtime(TRUE);
+
   $profile_name = $install_state['parameters']['profile'];
   $config = profiler_v2_load_config($profile_name);
 
@@ -84,7 +100,7 @@ function profiler_install_profile_complete(&$install_state) {
   // We flush caches at the beginning to ensure that any necessary module
   // tasks, such as Features component rebuilding, is complete before the
   // remaining tasks are run.
-  drupal_flush_all_caches();
+  // drupal_flush_all_caches();
 
   // Run any component installations
   profiler_install_components($config);
@@ -94,7 +110,11 @@ function profiler_install_profile_complete(&$install_state) {
   if (isset($config['node'])) {
     node_access_rebuild();
   }
-  drupal_flush_all_caches();
+  // drupal_flush_all_caches();
+
+  $t2 = (int) microtime(TRUE);
+  $time = $t2 - $t1;
+  watchdog('cms.install', '@time sec profiler_install_profile_complete', array('@time' => $time));
 }
 
 /**
@@ -263,6 +283,8 @@ function user_profiler_components() {
 function profiler_install_theme($theme_name, $config, &$identifiers) {
   theme_enable(array($theme_name));
   variable_set('theme_default', $theme_name);
+  theme_disable(array('bartik'));
+  watchdog('cms.install', 'profiler installed theme' . $theme_name);
 }
 
 /**

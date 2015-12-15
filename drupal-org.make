@@ -5,7 +5,10 @@ core = 7.x
 ; Modules
 ; -------
 
-projects[cms_core][subdir] = cms
+
+projects[module_filter][subdir] = contrib
+projects[module_filter][version] = "2.x-dev"
+
 
 projects[libraries][subdir] = contrib
 
@@ -23,12 +26,11 @@ projects[entity][subdir] = contrib
 
 projects[entity_view_mode][subdir] = contrib
 
-projects[entitycache][subdir] = contrib
-
 projects[features][subdir] = contrib
 ; projects[features][version] = "2.x-dev"
 ; Patch for UUID menu link export
-projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-5-D7.patch"
+projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-21-D7.patch"
+; updates above patch, was failing against latest features 2.x-dev
 ; ~update 08/06/2015 patch is committed projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
 
 projects[uuid][subdir] = contrib
@@ -47,6 +49,7 @@ projects[fences][version] = "1.x-dev"
 projects[file_entity][subdir] = contrib
 
 projects[field_collection][subdir] = contrib
+projects[field_collection][version] = "1.0-beta9"
 
 projects[field_formatter_class][subdir] = contrib
 
@@ -55,8 +58,6 @@ projects[field_formatter_settings][subdir] = contrib
 projects[field_group][subdir] = contrib
 
 projects[globalredirect][subdir] = contrib
-
-projects[honeypot][subdir] = contrib
 
 projects[html5_tools][subdir] = contrib
 
@@ -67,17 +68,13 @@ projects[jquery_update][subdir] = contrib
 projects[link][subdir] = contrib
 
 projects[media][subdir] = contrib
-projects[media][version] = "2.0-alpha4"
+projects[media][version] = "2.0-beta1"
+; Media Browser Multi Select
 projects[media][patch][] = "https://www.drupal.org/files/issues/allow_selecting_of-951004-136.patch"
+; Fix display toggle
+projects[media][patch][] = "https://www.drupal.org/files/issues/incorrect-logic-display-value-2545738-1.patch"
 
 projects[menu_block][subdir] = contrib
-
-projects[metatag][subdir] = contrib
-
-projects[metatag_views_overview][subdir] = contrib
-projects[metatag_views_overview][version] = "1.x-dev"
-
-projects[module_filter][subdir] = contrib
 
 projects[multiform][subdir] = contrib
 
@@ -102,37 +99,20 @@ projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_b
 projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
-projects[bootstrap][download][type] = git
-projects[bootstrap][download][branch] = "7.x-3.x"
-projects[bootstrap][download][url] = http://git.drupal.org/project/bootstrap.git
-projects[bootstrap][download][revision] = 597c3be4fb74952fa1df0ffa39f5e79dd40c614f
-
-projects[] = "cms_bootstrap3"
 
 libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-libraries[plupload][patch][1903850] = "https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch"
-projects[] = nexus
-
+; patch causing errors
+; libraries[plupload][patch][1903850] = "https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch"
 ; CMS Blog
 ; -------
-
-projects[cms_blog][subdir] = cms
 
 projects[service_links][subdir] = contrib
 
 projects[tagclouds][subdir] = contrib
 
-; CMS Contact
-; -------
-
-projects[cms_contact][subdir] = cms
-projects[webform][subdir] = contrib
-
 ; CMS Events
 ; -------
-
-projects[cms_events][subdir] = cms
 
 projects[addressfield][subdir] = contrib
 
@@ -140,29 +120,13 @@ projects[addressfield_tokens][subdir] = contrib
 
 projects[date][subdir] = contrib
 
-; CMS Event Registrations
-; -------
-
-projects[cms_event_registrations][subdir] = cms
 projects[registration][subdir] = contrib
-; projects[registration][version] = "1.x-dev"
 
 ; CMS News
 ; -------
 
-projects[cms_news][subdir] = cms
-
-; CMS Performance
-; -------
-
-projects[cms_performance][subdir] = cms
-projects[entitycache][subdir] = contrib
-
 ; CMS Portfolio
 ; -------
-
-
-projects[cms_portfolio][subdir] = cms
 
 projects[image_field_caption][subdir] = contrib
 projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/views_strip_caption-2345635-8.patch"
@@ -170,30 +134,9 @@ projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/vi
 ; CMS WYSIWYG
 ; -------
 
-projects[cms_wysiwyg][subdir] = cms
-
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = "2.x-dev"
 
-projects[shortcode][subdir] = contrib
-
-projects[shortcode_wysiwyg][subdir] = contrib
-; patch committed
-; projects[shortcode_wysiwyg][patch][] = "https://www.drupal.org/files/issues/https-%3A%3Awww.drupal.org%3Afiles%3Aissues%3Ashortcode_wysiwyg-supported_forms-2016669-9.patch"
-
-projects[jsdelivr][subdir] = contrib
-
-projects[sooperthemes_basic_elements][subdir] = contrib
-
-projects[bs_shortcodes][subdir] = contrib
-
-projects[block_shortcode][type] = module
-projects[block_shortcode][subdir] = sandboxes
-projects[block_shortcode][download][type] = git
-projects[block_shortcode][download][branch] = "7.x-1.x"
-projects[block_shortcode][download][url] = http://git.drupal.org/sandbox/SeanFitzpatrick/2219069.git
-projects[block_shortcode][download][revision] = aaab3b4443532bb9997791b7cf611b7a284c4914
-
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.5/ckeditor_4.5.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
