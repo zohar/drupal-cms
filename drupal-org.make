@@ -9,6 +9,10 @@ core = 7.x
 projects[module_filter][subdir] = contrib
 projects[module_filter][version] = "2.x-dev"
 
+; CMS Core
+; -------
+
+projects[cms_core][subdir] = cms
 
 projects[libraries][subdir] = contrib
 
@@ -104,8 +108,11 @@ libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
 ; patch causing errors
 ; libraries[plupload][patch][1903850] = "https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch"
+
 ; CMS Blog
 ; -------
+
+projects[cms_blog][subdir] = cms
 
 projects[service_links][subdir] = contrib
 
@@ -113,6 +120,8 @@ projects[tagclouds][subdir] = contrib
 
 ; CMS Events
 ; -------
+
+projects[cms_events][subdir] = cms
 
 projects[addressfield][subdir] = contrib
 
@@ -125,14 +134,20 @@ projects[registration][subdir] = contrib
 ; CMS News
 ; -------
 
+projects[cms_news][subdir] = cms
+
 ; CMS Portfolio
 ; -------
+
+projects[cms_portfolio][subdir] = cms
 
 projects[image_field_caption][subdir] = contrib
 projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/views_strip_caption-2345635-8.patch"
 
 ; CMS WYSIWYG
 ; -------
+
+projects[cms_wysiwyg][subdir] = cms
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = "2.x-dev"
