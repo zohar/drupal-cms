@@ -20,10 +20,6 @@ projects[ctools][subdir] = contrib
 
 projects[bean][subdir] = contrib
 
-projects[block_class][subdir] = contrib
-projects[block_class][version] = "2.1"
-projects[block_class][patch][] = "https://www.drupal.org/files/issues/block_class-predefined_classes_dropdown-665012-21.patch"
-
 projects[elements][subdir] = contrib
 
 projects[entity][subdir] = contrib
@@ -68,6 +64,7 @@ projects[html5_tools][subdir] = contrib
 projects[image_hover_effects][subdir] = contrib
 
 projects[jquery_update][subdir] = contrib
+projects[jquery_update][version] = "3.0-alpha3"
 
 projects[link][subdir] = contrib
 
@@ -103,6 +100,8 @@ projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_b
 projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
+projects[bootstrap][version] = "3.1"
+
 projects[glazed_free][type] = theme
 
 libraries[plupload][download][type] = "get"

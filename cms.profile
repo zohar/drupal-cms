@@ -30,11 +30,12 @@ function cms_form_install_configure_form_alter(&$form, $form_state) {
 
 /**
  * Implements hook_init().
+ * @todo move this to hook cache_rebuild in D8
  */
 function cms_init() {
   // http://drupal.stackexchange.com/questions/146401/uuid-menu-links-will-not-stick-during-profile-installation-but-work-fine-when-re
   // Run init script after the "Congratulations you installed cms" message
-  if ((variable_get('install_profile', FALSE) == 'cms') && (variable_get('cms_initialised_demo_content', FALSE) == FALSE) && drupal_is_front_page()) {
+  if ((variable_get('install_profile', FALSE) == 'cms') && (variable_get('cms_initialised_demo_content', FALSE) == FALSE)) {
     $t1 = (int) microtime(TRUE);
     $selected_imports = variable_get('cms_selected_imports');
     $demopack = variable_get('cms_demopack');
