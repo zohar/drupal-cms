@@ -12,6 +12,8 @@ projects[module_filter][version] = "2.x-dev"
 ; CMS Core
 ; -------
 
+projects[cms_core][subdir] = cms
+
 projects[libraries][subdir] = contrib
 
 projects[ctools][subdir] = contrib
