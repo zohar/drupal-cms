@@ -12,13 +12,13 @@ projects[module_filter][version] = "2.x-dev"
 ; CMS Core
 ; -------
 
-projects[cms_core][subdir] = cms
-
 projects[libraries][subdir] = contrib
 
 projects[ctools][subdir] = contrib
 
 projects[bean][subdir] = contrib
+
+projects[block_class][subdir] = contrib
 
 projects[elements][subdir] = contrib
 
@@ -34,7 +34,7 @@ projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu
 ; ~update 08/06/2015 patch is committed projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
 
 projects[uuid][subdir] = contrib
-projects[uuid][version] = "1.x-dev"
+; projects[uuid][version] = "1.x-dev"
 
 projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.x-dev"
@@ -49,7 +49,6 @@ projects[fences][version] = "1.x-dev"
 projects[file_entity][subdir] = contrib
 
 projects[field_collection][subdir] = contrib
-projects[field_collection][version] = "1.0-beta9"
 
 projects[field_formatter_class][subdir] = contrib
 
@@ -100,14 +99,10 @@ projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_b
 projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = "3.1"
-
-projects[glazed_free][type] = theme
+; projects[bootstrap][version] = "3.1"
 
 libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-; patch causing errors
-; libraries[plupload][patch][1903850] = "https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch"
 
 ; CMS Blog
 ; -------
