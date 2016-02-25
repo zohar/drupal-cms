@@ -43,7 +43,7 @@ variables[admin_theme] = seven
 variables[node_admin_theme] = 0
 theme = glazed_free
 
-; Performance Stuff on!
+; Performance Settings on!
 variables[block_cache] = 1
 variables[cache] = 1
 variables[page_cache_maximum_age] = 86400
