@@ -2,6 +2,7 @@ name = Glazed Drupal CMS
 distribution_name = cms
 description = Drupal distribution with production ready CMS features and Glazed Theme
 core = 7.x
+exclusive = 1
 
 ; Core
 ; ----
