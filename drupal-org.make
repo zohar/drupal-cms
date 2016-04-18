@@ -13,6 +13,7 @@ projects[module_filter][version] = "2.x-dev"
 ; -------
 
 projects[cms_core][subdir] = cms
+projects[cms_core][version] = "1.x-dev"
 
 
 projects[libraries][subdir] = contrib
@@ -112,6 +113,7 @@ libraries[plupload][patch][] = "https://www.drupal.org/files/issues/plupload-1_5
 ; -------
 
 projects[cms_blog][subdir] = cms
+projects[cms_blog][version] = "1.x-dev"
 
 projects[service_links][subdir] = contrib
 
@@ -121,6 +123,7 @@ projects[tagclouds][subdir] = contrib
 ; -------
 
 projects[cms_events][subdir] = cms
+projects[cms_events][version] = "1.x-dev"
 
 projects[addressfield][subdir] = contrib
 
@@ -134,11 +137,13 @@ projects[registration][subdir] = contrib
 ; -------
 
 projects[cms_news][subdir] = cms
+projects[cms_news][version] = "1.x-dev"
 
 ; CMS Portfolio
 ; -------
 
 projects[cms_portfolio][subdir] = cms
+projects[cms_portfolio][version] = "1.x-dev"
 
 projects[image_field_caption][subdir] = contrib
 projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/views_strip_caption-2345635-8.patch"
@@ -147,6 +152,7 @@ projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/vi
 ; -------
 
 projects[cms_wysiwyg][subdir] = cms
+projects[cms_wysiwyg][version] = "1.x-dev"
 
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][version] = "2.x-dev"
