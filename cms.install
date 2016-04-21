@@ -322,4 +322,3 @@ function cms_core_requirements($phase) {
 
   return $requirements;
 }
-
