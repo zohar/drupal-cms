@@ -31,11 +31,10 @@ projects[entity][subdir] = contrib
 projects[entity_view_mode][subdir] = contrib
 
 projects[features][subdir] = contrib
-; projects[features][version] = "2.x-dev"
+; Features 2.10 is buggy with wysiwyg feature: https://www.drupal.org/node/2723331
+projects[features][version] = "2.9"
 ; Patch for UUID menu link export
-projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-21-D7.patch"
-; updates above patch, was failing against latest features 2.x-dev
-; ~update 08/06/2015 patch is committed projects[features][patch][] = "https://www.drupal.org/files/issues/1064340-features-files-13.patch"
+projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-21-D7.patch"``
 
 projects[uuid][subdir] = contrib
 ; projects[uuid][version] = "1.x-dev"
