@@ -1,4 +1,4 @@
-name = Glazed Drupal CMS
+name = Glazed Drupal CMS 1.4
 distribution_name = cms
 description = Drupal distribution with production ready CMS features and Glazed free edition of Theme
 core = 7.x
