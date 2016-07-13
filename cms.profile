@@ -62,6 +62,9 @@ function cms_init() {
     if (module_exists($demopack)) {
       features_revert(array($demopack => array('menu_links')));
     }
+    if (module_exists('cms_wysiwyg')) {
+      features_revert(array('cms_wysiwyg' => array('wysiwyg')));
+    }
 
     module_load_include('inc', 'pathauto');
     module_load_include('inc', 'pathauto.pathauto');
