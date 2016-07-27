@@ -16,8 +16,9 @@ if ($max_nesting_level > 0 && $max_nesting_level <= '200') {
 function cms_install() {
   $t1 = (int) microtime(TRUE);
   $cms_theme = 'glazed_free';
+  variable_set('cms_theme', $cms_theme);
 
-  theme_enable(array($cms_theme));
+  // theme_enable(array($cms_theme)); // this was causing the user warnings during installation https://www.drupal.org/node/2487215
   variable_set('theme_default', $cms_theme);
 
   $demopack = 'cms_core_content';

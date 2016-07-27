@@ -67,7 +67,7 @@ function cms_init() {
     }
 
     module_load_include('inc', 'pathauto');
-    module_load_include('inc', 'pathauto.pathauto');
+    // module_load_include('inc', 'pathauto.pathauto');
     $nids = db_query("SELECT nid FROM {node}")->fetchCol();
     pathauto_node_update_alias_multiple($nids, 'bulkupdate');
 
