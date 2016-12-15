@@ -7,7 +7,6 @@ exclusive = 1
 ; Core
 ; ----
 dependencies[] = block
-dependencies[] = comment
 dependencies[] = contextual
 dependencies[] = color
 dependencies[] = dashboard
