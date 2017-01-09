@@ -71,6 +71,7 @@ projects[jquery_update][version] = "3.0-alpha3"
 projects[link][subdir] = contrib
 
 projects[media][subdir] = contrib
+
 ; projects[media][version] = "2.0-beta1"
 ; Media Browser Multi Select ~implemented in beta3
 ; projects[media][patch][] = "https://www.drupal.org/files/issues/allow_selecting_of-951004-136.patch"
@@ -104,6 +105,9 @@ projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
 ; projects[bootstrap][version] = "3.1"
+projects[glazed_free][type] = theme
+
+projects[glazed_helper][subdir] = contrib
 
 libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
