@@ -28,7 +28,7 @@ projects[entity][subdir] = contrib
 
 projects[entity_view_mode][subdir] = contrib
 
-pprojects[features][subdir] = contrib
+projects[features][subdir] = contrib
 ; Features 2.10 is buggy with wysiwyg feature: https://www.drupal.org/node/2723331
 projects[features][version] = "2.10"
 ; Patch for UUID menu link export
