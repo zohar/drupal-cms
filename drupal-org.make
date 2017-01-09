@@ -97,7 +97,8 @@ projects[views][subdir] = contrib
 
 projects[views_bootstrap][subdir] = contrib
 projects[views_bootstrap][version] = "3.x-dev"
-projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
+; patch made it to dev
+;projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
 
 projects[views_fieldsets][subdir] = contrib
 
