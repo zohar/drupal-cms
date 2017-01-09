@@ -156,6 +156,6 @@ projects[cms_wysiwyg][subdir] = cms
 projects[wysiwyg][subdir] = contrib
 
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.5/ckeditor_4.5.5_full.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.6.1/ckeditor_4.6.1_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 
