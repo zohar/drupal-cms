@@ -13,8 +13,6 @@ projects[module_filter][version] = "2.x-dev"
 ; -------
 
 projects[cms_core][subdir] = cms
-projects[cms_core][version] = "1.x-dev"
-
 
 projects[libraries][subdir] = contrib
 
@@ -30,9 +28,9 @@ projects[entity][subdir] = contrib
 
 projects[entity_view_mode][subdir] = contrib
 
-projects[features][subdir] = contrib
+pprojects[features][subdir] = contrib
 ; Features 2.10 is buggy with wysiwyg feature: https://www.drupal.org/node/2723331
-projects[features][version] = "2.9"
+projects[features][version] = "2.10"
 ; Patch for UUID menu link export
 projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-21-D7.patch"
 
@@ -41,6 +39,8 @@ projects[uuid][subdir] = contrib
 
 projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.x-dev"
+; This patch fixes uuid field collection references
+projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/uuid_features-drush-installation-referenced-entities-reliability-fix-2790431-1.patch"
 ; ~update 19/07/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/uuid_features-2533316-1-EntityMalformedException-when-used-tog.patch"
 ; ~update 03/06/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/fix-packaged-files-2488804-3.patch"
 
@@ -71,11 +71,11 @@ projects[jquery_update][version] = "3.0-alpha3"
 projects[link][subdir] = contrib
 
 projects[media][subdir] = contrib
-projects[media][version] = "2.0-beta1"
-; Media Browser Multi Select
-projects[media][patch][] = "https://www.drupal.org/files/issues/allow_selecting_of-951004-136.patch"
-; Fix display toggle
-projects[media][patch][] = "https://www.drupal.org/files/issues/incorrect-logic-display-value-2545738-1.patch"
+; projects[media][version] = "2.0-beta1"
+; Media Browser Multi Select ~implemented in beta3
+; projects[media][patch][] = "https://www.drupal.org/files/issues/allow_selecting_of-951004-136.patch"
+; Fix display toggle ~implemented in beta 2
+; projects[media][patch][] = "https://www.drupal.org/files/issues/incorrect-logic-display-value-2545738-1.patch"
 
 projects[menu_block][subdir] = contrib
 
@@ -102,7 +102,7 @@ projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_b
 projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
-projects[glazed_free][type] = theme
+; projects[bootstrap][version] = "3.1"
 
 libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
@@ -112,7 +112,6 @@ libraries[plupload][patch][] = "https://www.drupal.org/files/issues/plupload-1_5
 ; -------
 
 projects[cms_blog][subdir] = cms
-projects[cms_blog][version] = "1.x-dev"
 
 projects[service_links][subdir] = contrib
 
@@ -122,7 +121,6 @@ projects[tagclouds][subdir] = contrib
 ; -------
 
 projects[cms_events][subdir] = cms
-projects[cms_events][version] = "1.x-dev"
 
 projects[addressfield][subdir] = contrib
 
@@ -136,13 +134,11 @@ projects[registration][subdir] = contrib
 ; -------
 
 projects[cms_news][subdir] = cms
-projects[cms_news][version] = "1.x-dev"
 
 ; CMS Portfolio
 ; -------
 
 projects[cms_portfolio][subdir] = cms
-projects[cms_portfolio][version] = "1.x-dev"
 
 projects[image_field_caption][subdir] = contrib
 projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/views_strip_caption-2345635-8.patch"
@@ -151,11 +147,10 @@ projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/vi
 ; -------
 
 projects[cms_wysiwyg][subdir] = cms
-projects[cms_wysiwyg][version] = "1.x-dev"
 
 projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][version] = "2.x-dev"
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.5/ckeditor_4.5.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
+
