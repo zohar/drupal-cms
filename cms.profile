@@ -1,84 +1,88 @@
 <?php
-/**
- * Initiate the Profiler library
- */
-!function_exists('profiler_v2') ? require_once('libraries/profiler/profiler.inc') : FALSE;
-profiler_v2('cms');
 
 /**
- * Implements hook_form_FORM_ID_alter().
- *
- * Allows the profile to alter install profile selection form.
- *
- * We have to call 'system' here because drupal doesn't seem to pick up on
- * the hook ('cms') at this level in the install process.
+ * @file
+ * Enables modules and site configuration for a Glazed CMS site installation.
  */
-function system_form_install_select_profile_form_alter(&$form, $form_state) {
-   foreach($form['profile'] as $key => $element) {
-     $form['profile'][$key]['#value'] = 'cms';
-   }
-}
+
+use Drupal\contact\Entity\ContactForm;
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_form_FORM_ID_alter().
  *
  * Allows the profile to alter the site configuration form.
  */
-function cms_form_install_configure_form_alter(&$form, $form_state) {
-  // Pre-populate the site name with the server name.
+function cms_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
+  $form['#submit'][] = 'cms_form_install_configure_submit';
 }
 
 /**
- * Implements hook_init().
- * @todo move this to hook cache_rebuild in D8
+ * Submission handler to sync the contact.form.feedback recipient.
  */
-function cms_init() {
-  // http://drupal.stackexchange.com/questions/146401/uuid-menu-links-will-not-stick-during-profile-installation-but-work-fine-when-re
-  // Run init script after the "Congratulations you installed cms" message
-  if ((variable_get('install_profile', FALSE) == 'cms') && (variable_get('cms_initialised_demo_content', FALSE) == FALSE)) {
-    $t1 = (int) microtime(TRUE);
-    $selected_imports = variable_get('cms_selected_imports');
-    $demopack = variable_get('cms_demopack');
+function cms_form_install_configure_submit($form, FormStateInterface $form_state) {
+  $site_mail = $form_state->getValue('site_mail');
+  ContactForm::load('feedback')->setRecipients([$site_mail])->trustData()->save();
+}
 
-    if (ini_get('memory_limit') != '-1' && ini_get('memory_limit') <= '196M') {
-      ini_set('memory_limit', '196M');
-    }
-    if (ini_get('max_execution_time') != '0' && ini_get('max_execution_time') <= '300') {
-      ini_set('max_execution_time', '300');
-      ini_set('max_input_time', '300');
-    }
-    ini_set('realpath_cache_size=', '2M');
-    $max_nesting_level = ini_get('xdebug.max_nesting_level');
-    if ($max_nesting_level > 0 && $max_nesting_level <= '200') {
-      ini_set('xdebug.max_nesting_level', 200);
-    }
-    if ($selected_imports) {
-      foreach ($selected_imports as $module) {
-        if (module_exists($module)) {
-          features_revert(array($module => array('menu_links')));
-        }
-      }
-    }
-    if (module_exists($demopack)) {
-      features_revert(array($demopack => array('menu_links')));
-    }
-    if (module_exists('cms_wysiwyg')) {
-      features_revert(array('cms_wysiwyg' => array('wysiwyg')));
-    }
+/**
+ * Implements hook_install_tasks().
+ */
+function cms_install_tasks(&$install_state) {
 
-    module_load_include('inc', 'pathauto');
-    // module_load_include('inc', 'pathauto.pathauto');
-    $nids = db_query("SELECT nid FROM {node}")->fetchCol();
-    pathauto_node_update_alias_multiple($nids, 'bulkupdate');
+  $tasks = [
+    'cms_module_configure' => [
+      'display_name' => t('Choose CMS features'),
+      'type' => 'form',
+      'function' => 'Drupal\cms\Form\ModuleConfigureForm',
+    ],
+    'cms_module_install' => [
+      'display_name' => t('Install additional modules'),
+      'type' => 'batch',
+    ],
+  ];
 
-    variable_set('cms_initialised_demo_content', TRUE);
-    // Remove any status messages that might have been set. They are unneeded.
-    drupal_get_messages('status', TRUE);
-    drupal_get_messages('warning', TRUE);
+  return $tasks;
+}
 
-    $t2 = (int) microtime(TRUE);
-    $time = $t2 - $t1;
-    watchdog('cms.install', '@time sec cms_init install tasks', array('@time' => $time));
+/**
+ * Installs the CMS modules in a batch.
+ *
+ * @param array $install_state
+ *   The install state.
+ *
+ * @return array
+ *   A batch array to execute.
+ */
+function cms_module_install(array &$install_state) {
 
+  $modules = $install_state['cms_additional_modules'];
+
+  $batch = [];
+  if ($modules) {
+    $operations = [];
+    foreach ($modules as $module) {
+      $operations[] = ['cms_install_module_batch', [$module]];
+    }
+    $batch = [
+      'operations' => $operations,
+      'title' => t('Installing additional modules'),
+      'error_message' => t('The installation has encountered an error.'),
+    ];
   }
+
+  return $batch;
+}
+
+/**
+ * Implements callback_batch_operation().
+ *
+ * Performs batch installation of modules.
+ */
+function cms_install_module_batch($module, &$context) {
+  // CMS Modules are not available yet.
+  // \Drupal::service('module_installer')->install([$module], TRUE);
+  $context['results'][] = $module;
+  $context['message'] = t('Installed %module_name module.', ['%module_name' => $module]);
 }

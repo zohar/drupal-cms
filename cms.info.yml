@@ -1,0 +1,40 @@
+name: CMS
+type: profile
+description: Drupal distribution with production ready CMS features.
+core: 8.x
+dependencies:
+# Core modules.
+  - automated_cron
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - comment
+  - contact
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - field_ui
+  - file
+  - image
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - search
+  - taxonomy
+  - views
+  - views_ui
+# Contributed modules
+  - admin_toolbar
+  - admin_toolbar_tools
+  - toolbar_anti_flicker
+themes:
+  - bootstrap
+  - seven
+distribution:
+  name: CMS
+  install:
+    theme: cms_install

@@ -1,0 +1,67 @@
+/**
+ * @file
+ * Installation styling.
+ *
+ * By some reasons this file is loaded after Seven's one.
+ */
+body.install-page {
+  background: #07c9ea;
+}
+
+body.install-page .page-header {
+  border-bottom: double 3px #07c9ea;
+  margin-bottom: 10px;
+}
+
+body.install-page .button--primary {
+  background: #07c9ea;
+  border-color: #07c9ea;
+  text-shadow: 1px 1px #333;
+}
+
+body.install-page .page-title {
+  color: #07c9ea;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+body.install-page .task-list .is-active {
+  background-color: #f86353;
+  color: #fff;
+}
+
+body.install-page .task-list .is-active:after {
+  border-left-color: #f86353;
+}
+
+body.install-page .progress__track {
+  height: 12px;
+}
+
+body.install-page .progress__bar {
+  height: 12px;
+  border-color: #07c9ea;
+  background: #07c9ea;
+}
+
+.cms-features-form .form-type-checkbox {
+  padding: 5px 10px;
+}
+
+.cms-features {
+  border-bottom: solid 1px #ccc;
+}
+
+.cms-features .form-type-checkbox {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.cms-features .form-type-checkbox:hover {
+  background-color: #f5f5f5;
+}
+
+.cms-features .form-type-checkbox.cms-feature-selected {
+  background-color: #afe9f6;
+  transition: background-color 300ms linear;
+}
