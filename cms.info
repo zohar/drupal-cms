@@ -25,7 +25,6 @@ dependencies[] = number
 dependencies[] = options
 dependencies[] = path
 dependencies[] = rdf
-dependencies[] = search
 dependencies[] = shortcut
 dependencies[] = system
 dependencies[] = taxonomy
@@ -36,8 +35,9 @@ dependencies[] = user
 
 ; CMS Installation Profile
 ; ----
-dependencies[] = module_filter
 dependencies[] = glazed_helper
+dependencies[] = module_filter
+dependencies[] = search
 
 variables[theme_default] = glazed_free
 variables[admin_theme] = seven
