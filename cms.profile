@@ -82,7 +82,7 @@ function cms_module_install(array &$install_state) {
  */
 function cms_install_module_batch($module, &$context) {
   // CMS Modules are not available yet.
-  // \Drupal::service('module_installer')->install([$module], TRUE);
+   \Drupal::service('module_installer')->install([$module], TRUE);
   $context['results'][] = $module;
   $context['message'] = t('Installed %module_name module.', ['%module_name' => $module]);
 }

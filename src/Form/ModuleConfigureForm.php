@@ -30,25 +30,25 @@ class ModuleConfigureForm extends FormBase {
       '#tree' => TRUE,
     ];
 
-    $form['cms_modules']['blog'] = [
+    $form['cms_modules']['cms_blog'] = [
       '#type' => 'checkbox',
       '#title' => t('Blog'),
       '#description' => t('Description of the Blog feature.'),
     ];
 
-    $form['cms_modules']['news'] = [
+    $form['cms_modules']['cms_news'] = [
       '#type' => 'checkbox',
       '#title' => t('News'),
       '#description' => t('Description of the News feature.'),
     ];
 
-    $form['cms_modules']['events'] = [
+    $form['cms_modules']['cms_events'] = [
       '#type' => 'checkbox',
       '#title' => t('Events'),
       '#description' => t('Description of the Events feature.'),
     ];
 
-    $form['cms_modules']['portfolio'] = [
+    $form['cms_modules']['cms_portfolio'] = [
       '#type' => 'checkbox',
       '#title' => t('Portfolio'),
       '#description' => t('Description of the Portfolio feature.'),
