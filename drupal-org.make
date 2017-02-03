@@ -13,6 +13,9 @@ projects[views_bootstrap] = 3.0-dev
 projects[rng] = 1.3
 projects[field_formatter_class] = 1.0-rc2
 projects[field_group] = 1.0-rc6
+projects[dynamic_entity_reference] = 2.0-alpha1
+projects[courier] = 1.0-alpha9
+projects[unlimited_number] = 1.0-beta2
 
 ; CMS Modules
 projects[cms_core][version] = 1.0-dev
