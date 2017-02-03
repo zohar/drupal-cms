@@ -27,9 +27,9 @@ projects[cms_events] = 1.0-dev
 projects[cms_events][subdir] = cms
 projects[cms_events][download][type] = git
 
-projects[cms_profile] = 1.0-dev
-projects[cms_profile][subdir] = cms
-projects[cms_profile][download][type] = git
+projects[cms_portfolio] = 1.0-dev
+projects[cms_portfolio][subdir] = cms
+projects[cms_portfolio][download][type] = git
 
 projects[cms_news] = 1.0-dev
 projects[cms_news][subdir] = cms
