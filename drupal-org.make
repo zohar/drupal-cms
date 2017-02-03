@@ -32,3 +32,4 @@ projects[cms_news][subdir] = cms
 
 ; Contributed themes
 projects[bootstrap] = 3.1
+projects[bootstrap][subdir] =
