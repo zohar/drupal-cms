@@ -9,7 +9,7 @@ projects[toolbar_anti_flicker] = 2.5
 projects[default_content] = 1.0-alpha3
 projects[better_normalizers] = 1.0-beta1
 projects[smart_trim] = 1.0
-projects[views_bootstrap] = 3.x-dev
+projects[views_bootstrap] = 3.0-dev
 projects[rng] = 1.3
 projects[field_formatter_class] = 1.0-rc2
 projects[field_group] = 1.0-rc6
@@ -30,3 +30,5 @@ projects[cms_portfolio][subdir] = cms
 projects[cms_news][version] = 1.0-dev
 projects[cms_news][subdir] = cms
 
+; Contributed themes
+projects[bootstrap] = 3.1
