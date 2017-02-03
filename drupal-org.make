@@ -34,3 +34,6 @@ projects[cms_portfolio][download][type] = git
 projects[cms_news] = 1.0-dev
 projects[cms_news][subdir] = cms
 projects[cms_news][download][type] = git
+
+; Contributed themes
+projects[bootstrap] = 3.1
