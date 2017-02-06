@@ -57,14 +57,29 @@ function cms_install_tasks(&$install_state) {
  */
 function cms_module_install(array &$install_state) {
 
-  $modules = $install_state['cms_additional_modules'];
-
   $batch = [];
-  if ($modules) {
+  if (count($install_state['cms_additional_modules']) > 0) {
+
+    $modules = $install_state['cms_additional_modules'];
+
+    // Default content module installs content by implementing
+    // hook_modules_installed(). Since CMS modules have no dependency on Default
+    // content we need to make sure the module is installed before them.
+    if ($install_state['cms_demo_content']) {
+      array_unshift($modules, 'default_content', 'better_normalizers');
+    }
+
     $operations = [];
     foreach ($modules as $module) {
       $operations[] = ['cms_install_module_batch', [$module]];
     }
+
+    // Uninstall Default content and Better normalizers modules as they only
+    // needed on installation process.
+    if ($install_state['cms_demo_content']) {
+      $operations[] = ['cms_cleanup_batch', []];
+    }
+
     $batch = [
       'operations' => $operations,
       'title' => t('Installing additional modules'),
@@ -85,4 +100,12 @@ function cms_install_module_batch($module, &$context) {
    \Drupal::service('module_installer')->install([$module], TRUE);
   $context['results'][] = $module;
   $context['message'] = t('Installed %module_name module.', ['%module_name' => $module]);
+}
+
+/**
+ * Implements callback_batch_operation().
+ */
+function cms_cleanup_batch(&$context) {
+  \Drupal::service('module_installer')->uninstall(['default_content', 'better_normalizers'], FALSE);
+  $context['message'] = t('Cleanup.');
 }
