@@ -17,7 +17,6 @@ dependencies:
   - field_ui
   - file
   - image
-  - pathauto
   - menu_link_content
   - menu_ui
   - node
@@ -29,8 +28,7 @@ dependencies:
   - views
   - views_ui
 # Contributed modules
-  - admin_toolbar
-  - admin_toolbar_tools
+  - pathauto
   - toolbar_anti_flicker
 themes:
   - bootstrap
