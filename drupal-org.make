@@ -15,6 +15,9 @@ projects[field_group] = 1.0-rc6
 projects[dynamic_entity_reference] = 2.0-alpha1
 projects[courier] = 1.0-alpha9
 projects[unlimited_number] = 1.0-beta2
+projects[pathauto] = 1.0-rc1
+projects[tagclouds] = 1.0-dev
+projects[image_hover_effects] = 1.0-dev
 
 projects[views_bootstrap][version] = 3.0-dev
 projects[views_bootstrap][download][type] = git
