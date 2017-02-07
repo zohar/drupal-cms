@@ -18,6 +18,7 @@ projects[pathauto] = 1.0-rc1
 projects[ctools] = 3.0-alpha27
 projects[tagclouds] = 1.0-dev
 projects[image_hover_effects] = 1.0-dev
+projects[token] = 1.0-rc1
 
 projects[views_bootstrap][version] = 3.0-dev
 projects[views_bootstrap][download][type] = git
