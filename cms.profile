@@ -97,7 +97,7 @@ function cms_module_install(array &$install_state) {
  */
 function cms_install_module_batch($module, &$context) {
   // CMS Modules are not available yet.
-   \Drupal::service('module_installer')->install([$module], TRUE);
+  Drupal::service('module_installer')->install([$module], TRUE);
   $context['results'][] = $module;
   $context['message'] = t('Installed %module_name module.', ['%module_name' => $module]);
 }
@@ -106,8 +106,6 @@ function cms_install_module_batch($module, &$context) {
  * Implements callback_batch_operation().
  */
 function cms_cleanup_batch(&$context) {
-  // Keep the modules installed until Default content get fixed menu hierarchy.
-  // @see Drupal\cms_core\EventSubscriber\CMSCoreSubscriber
-  // \Drupal::service('module_installer')->uninstall(['default_content', 'better_normalizers'], FALSE);
+  Drupal::service('module_installer')->uninstall(['default_content', 'better_normalizers'], FALSE);
   $context['message'] = t('Cleanup.');
 }
