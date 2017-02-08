@@ -77,7 +77,7 @@ function cms_module_install(array &$install_state) {
     // Uninstall Default content and Better normalizers modules as they only
     // needed on installation process.
     if ($install_state['cms_demo_content']) {
-       $operations[] = ['cms_cleanup_batch', []];
+      $operations[] = ['cms_cleanup_batch', []];
     }
 
     $batch = [
