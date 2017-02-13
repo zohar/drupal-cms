@@ -15,15 +15,6 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function cms_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
-  $form['#submit'][] = 'cms_form_install_configure_submit';
-}
-
-/**
- * Submission handler to sync the contact.form.feedback recipient.
- */
-function cms_form_install_configure_submit($form, FormStateInterface $form_state) {
-  $site_mail = $form_state->getValue('site_mail');
-  ContactForm::load('feedback')->setRecipients([$site_mail])->trustData()->save();
 }
 
 /**
@@ -61,6 +52,7 @@ function cms_module_install(array &$install_state) {
   if (count($install_state['cms_additional_modules']) > 0) {
 
     $modules = $install_state['cms_additional_modules'];
+    array_unshift($modules, 'cms_core');
 
     // Default content module installs content by implementing
     // hook_modules_installed(). Since CMS modules have no dependency on Default
@@ -98,6 +90,13 @@ function cms_module_install(array &$install_state) {
 function cms_install_module_batch($module, &$context) {
   // CMS Modules are not available yet.
   Drupal::service('module_installer')->install([$module], TRUE);
+
+  if ($module == 'cms_core') {
+    // Set front page.
+    $nid = Drupal::database()->query("SELECT nid FROM {node} WHERE uuid = '36ebca91-636a-48d7-b7a7-29c568ddecd4'")->fetchField();
+    $nid && Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node/' . $nid)->save(TRUE);
+  }
+
   $context['results'][] = $module;
   $context['message'] = t('Installed %module_name module.', ['%module_name' => $module]);
 }

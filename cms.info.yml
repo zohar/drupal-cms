@@ -10,6 +10,7 @@ dependencies:
   - breakpoint
   - ckeditor
   - comment
+  - contextual
   - contact
   - datetime
   - dblog
