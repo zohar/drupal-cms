@@ -51,7 +51,6 @@ config:
     - block.block.seven_secondary_local_tasks
     - block_content.type.basic
     - comment.type.comment
-    - contact.form.feedback
     - core.entity_form_display.block_content.basic.default
     - core.entity_form_display.comment.comment.default
     - core.entity_form_display.node.article.default
