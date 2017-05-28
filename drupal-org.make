@@ -29,20 +29,15 @@ projects[entity][subdir] = contrib
 projects[entity_view_mode][subdir] = contrib
 
 projects[features][subdir] = contrib
-; Features 2.10 is buggy with wysiwyg feature: https://www.drupal.org/node/2723331
 projects[features][version] = "2.10"
-; Patch for UUID menu link export
 projects[features][patch][] = "https://www.drupal.org/files/issues/features-menu_links_uuid-2353585-21-D7.patch"
 
 projects[uuid][subdir] = contrib
-; projects[uuid][version] = "1.x-dev"
 
 projects[uuid_features][subdir] = contrib
 projects[uuid_features][version] = "1.x-dev"
 ; This patch fixes uuid field collection references
 projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/uuid_features-drush-installation-referenced-entities-reliability-fix-2790431-1.patch"
-; ~update 19/07/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/uuid_features-2533316-1-EntityMalformedException-when-used-tog.patch"
-; ~update 03/06/2015 patch is committed projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/fix-packaged-files-2488804-3.patch"
 
 projects[features_override][subdir] = contrib
 
@@ -72,12 +67,6 @@ projects[link][subdir] = contrib
 
 projects[media][subdir] = contrib
 
-; projects[media][version] = "2.0-beta1"
-; Media Browser Multi Select ~implemented in beta3
-; projects[media][patch][] = "https://www.drupal.org/files/issues/allow_selecting_of-951004-136.patch"
-; Fix display toggle ~implemented in beta 2
-; projects[media][patch][] = "https://www.drupal.org/files/issues/incorrect-logic-display-value-2545738-1.patch"
-
 projects[menu_block][subdir] = contrib
 
 projects[multiform][subdir] = contrib
@@ -98,16 +87,10 @@ projects[views][subdir] = contrib
 
 projects[views_bootstrap][subdir] = contrib
 projects[views_bootstrap][version] = "3.x-dev"
-; patch made it to dev
-;projects[views_bootstrap][patch][] = "http://www.drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-40.patch"
 
 projects[views_fieldsets][subdir] = contrib
 
 projects[bootstrap][type] = theme
-; projects[bootstrap][version] = "3.1"
-projects[glazed_free][type] = theme
-
-projects[glazed_helper][subdir] = contrib
 
 libraries[plupload][download][type] = "get"
 libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
@@ -154,8 +137,9 @@ projects[image_field_caption][patch][] = "https://www.drupal.org/files/issues/vi
 projects[cms_wysiwyg][subdir] = cms
 
 projects[wysiwyg][subdir] = contrib
+projects[wysiwyg][version] = "2.x-dev"
 
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.6.1/ckeditor_4.6.1_full.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.6.2/ckeditor_4.6.2_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 
