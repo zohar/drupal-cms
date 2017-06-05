@@ -1,4 +1,4 @@
-name: CMS
+name: Glazed CMS
 type: profile
 description: Drupal distribution with production ready CMS features.
 core: 8.x
