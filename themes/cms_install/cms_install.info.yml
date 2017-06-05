@@ -1,8 +1,8 @@
-name: CMS Install
+name: Glazed CMS Install
 type: theme
 base theme: seven
 description: CMS theme for installation process.
-package: CMS
+package: Glazed CMS
 version: 8.x-1.0-dev
 core: 8.x
 libraries:

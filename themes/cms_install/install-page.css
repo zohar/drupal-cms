@@ -5,22 +5,27 @@
  * By some reasons this file is loaded after Seven's one.
  */
 body.install-page {
-  background: #07c9ea;
+  background: #07e0ea;
 }
 
 body.install-page .page-header {
-  border-bottom: double 3px #07c9ea;
+  border-bottom: double 3px #07e0ea;
   margin-bottom: 10px;
+  background: transparent url("logo.svg") no-repeat 51% 56%;
+  background-size: 20% auto;
 }
 
 body.install-page .button--primary {
-  background: #07c9ea;
-  border-color: #07c9ea;
-  text-shadow: 1px 1px #333;
+  background: #07e0ea;
+  border-color: #07e0ea;
+  text-shadow: none;
+  border-radius: 0;
+  color: #fff;
+  padding: 6px 16px;
 }
 
 body.install-page .page-title {
-  color: #07c9ea;
+  color: #07e0ea;
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -40,8 +45,8 @@ body.install-page .progress__track {
 
 body.install-page .progress__bar {
   height: 12px;
-  border-color: #07c9ea;
-  background: #07c9ea;
+  border-color: #07e0ea;
+  background: #07e0ea;
 }
 
 .cms-features-form .form-type-checkbox {
