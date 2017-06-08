@@ -35,7 +35,7 @@ themes:
   - bootstrap
   - seven
 distribution:
-  name: CMS
+  name: Glazed Drupal CMS
   install:
     theme: cms_install
 config:

@@ -5,19 +5,19 @@
  * By some reasons this file is loaded after Seven's one.
  */
 body.install-page {
-  background: #07e0ea;
+  background: #01b0ef;
 }
 
 body.install-page .page-header {
-  border-bottom: double 3px #07e0ea;
+  border-bottom: double 3px #01b0ef;
   margin-bottom: 10px;
-  background: transparent url("logo.svg") no-repeat 51% 56%;
-  background-size: 20% auto;
+  background: transparent url("logo.svg") no-repeat 93% 45%;
+  background-size: 15% auto;
 }
 
 body.install-page .button--primary {
-  background: #07e0ea;
-  border-color: #07e0ea;
+  background: #01b0ef;
+  border-color: #01b0ef;
   text-shadow: none;
   border-radius: 0;
   color: #fff;
@@ -25,18 +25,20 @@ body.install-page .button--primary {
 }
 
 body.install-page .page-title {
-  color: #07e0ea;
+  color: #01b0ef;
   margin-top: 5px;
   margin-bottom: 10px;
+  font-size: 14px;
+  margin-left: 50px;
 }
 
 body.install-page .task-list .is-active {
-  background-color: #f86353;
+  background-color: #01b0ef;
   color: #fff;
 }
 
 body.install-page .task-list .is-active:after {
-  border-left-color: #f86353;
+  border-left-color: #01b0ef;
 }
 
 body.install-page .progress__track {
@@ -45,8 +47,8 @@ body.install-page .progress__track {
 
 body.install-page .progress__bar {
   height: 12px;
-  border-color: #07e0ea;
-  background: #07e0ea;
+  border-color: #01b0ef;
+  background: #01b0ef;
 }
 
 .cms-features-form .form-type-checkbox {
@@ -69,4 +71,13 @@ body.install-page .progress__bar {
 .cms-features .form-type-checkbox.cms-feature-selected {
   background-color: #afe9f6;
   transition: background-color 300ms linear;
+}
+
+@media all and (min-width: 48em) { /* 768px */
+   .task-list li {
+    padding: 0.65em 1em 0.65em 3.85em !important;
+   }
+  [dir="rtl"] .task-list li {
+    padding: 0.65em 3.85em 0.65em 1em !important;
+  }
 }
