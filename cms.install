@@ -16,19 +16,24 @@ if ($max_nesting_level > 0 && $max_nesting_level <= '200') {
 function cms_install() {
   $t1 = (int) microtime(TRUE);
 
-  $cms_theme = 'glazed_free';
-  variable_set('cms_theme', $cms_theme);
+  if (is_readable(dirname(__FILE__) . '/default_theme') && $f = fopen(dirname(__FILE__) . '/default_theme', 'r')) {
+    $cms_theme = str_replace(array("\r", "\n"), '', fgets($f));
+    fclose($f);
+    variable_set('cms_theme', $cms_theme);
 
-  theme_enable(array($cms_theme)); // this was/is causing the user warnings during installation https://www.drupal.org/node/2487215
-  variable_set('theme_default', $cms_theme);
+    theme_enable(array($cms_theme)); // this was/is causing the user warnings during installation https://www.drupal.org/node/2487215
+    variable_set('theme_default', $cms_theme);
+  }
 
-  $demopack = 'cms_core_content';
-  variable_set('cms_demopack', $demopack);
+  if (is_readable(dirname(__FILE__) . '/demopack') && $f = fopen(dirname(__FILE__) . '/demopack', 'r')) {
+    $demopack = str_replace(array("\r", "\n"), '', fgets($f));
+    fclose($f);
+    variable_set('cms_demopack', $demopack);
+  }
 
   // Remove any status messages that might have been set. They are unneeded.
   drupal_get_messages('status', TRUE);
   drupal_get_messages('warning', TRUE);
-  drupal_set_message(t('Ignore "missing theme" errors during installation, this is an annoying but harmless Drupal 7.50 problem. ~Jurriaan, SooperThemes'));
   variable_set('cms_installer_t2', microtime(TRUE));
 
   $t2 = (int) microtime(TRUE);
@@ -114,9 +119,22 @@ function cms_import_demo_form() {
   module_load_include('inc', 'features', 'features.admin');
   $demo_content_modules = array_filter(_features_get_features_list(), "_cms_is_demo_content");
 
-  usort($demo_content_modules, function($a, $b) {
-    return (count($a->info['features']['uuid_node']) < count($b->info['features']['uuid_node'])) ? 1 : -1;
-  });
+  if (is_readable(dirname(__FILE__) . '/demopack') && $f = fopen(dirname(__FILE__) . '/demopack', 'r')) {
+    $demopack = str_replace(array("\r", "\n"), '', fgets($f));
+    fclose($f);
+    variable_set('cms_demopack', $demopack);
+  }
+  if (is_readable(dirname(__FILE__) . '/demo_excludes') && $f = fopen(dirname(__FILE__) . '/demo_excludes', 'r')) {
+    $demopacks = explode(' ', str_replace(array("\r", "\n"), '', fgets($f)));
+    foreach ($demopacks as $value) {
+      unset($demo_content_modules[$value]);
+    }
+    fclose($f);
+  }
+  if ($cms_theme == 'glazed') {
+    // core demo content is not useful for glazed premium profiles
+    unset($demo_content_modules['cms_core_content']);
+  }
 
   $import_options = array();
   $count_array = array();
@@ -129,15 +147,11 @@ function cms_import_demo_form() {
   }
 
   watchdog('cms.install', 'demo modules: @demos', array('@demos' => print_r($import_options, TRUE)));
-  // unset CMS Contact default content because we make this mandatory in installation
   if (isset($import_options['glazed_content_elements_examples_2'])) {
     // changing order because elements 2 has to install after elements 1
     $import_options = array('glazed_content_elements_examples_2' => $import_options['glazed_content_elements_examples_2']) + $import_options;
   }
-  if ($cms_theme == 'glazed') {
-    // prevent conflict that kills theme settings css write.
-    unset($import_options['cms_core_content']);
-  }
+
   // time spent over average time * 4 minutes * total pages over total pages in test runs
   // 8 0.8 because it looke like we we were overestimating
   $estimate = round($time / 120 * 4 * $count_total / 60 * 0.8);
@@ -201,7 +215,9 @@ function cms_import_demo_form_submit(&$form, &$form_state) {
   variable_set('cms_selected_imports', array_keys(array_filter($form_state['values']['demo_imports'])));
   // This is needed to refresh loaded "includes" in the uuid features module
   // this fixes buggy support of uuid menu links, field collections etc. in drush site-install
-  uuid_features_include(TRUE);
+  if (module_exists('uuid_features')) {
+    uuid_features_include(TRUE);
+  }
 }
 
 

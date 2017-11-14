@@ -1,4 +1,4 @@
-name = Glazed Drupal CMS 1.4
+name = Glazed Drupal CMS
 distribution_name = cms
 description = Drupal distribution with production ready CMS features and Glazed free edition of Theme
 core = 7.x
@@ -138,7 +138,6 @@ dependencies[] = cms_news
 ; -------
 
 dependencies[] = cms_portfolio
-dependencies[] = image_field_caption
 dependencies[] = image_hover_effects
 dependencies[] = views_bootstrap
 

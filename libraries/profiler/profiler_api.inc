@@ -67,7 +67,7 @@ function profiler_install_profile_modules(&$install_state) {
  * Helper to hook_form_install_configure_form_alter().
  */
 function profiler_form_install_configure_form_alter($config, &$form, &$form_state) {
-  $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
+  $form['site_information']['site_name']['#default_value'] = t('Glazed Drupal CMS');
 }
 
 /**
