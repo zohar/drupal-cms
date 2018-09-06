@@ -5,19 +5,22 @@
  * By some reasons this file is loaded after Seven's one.
  */
 body.install-page {
-  background: #01b0ef;
+  background: #0180ef;
+  background: #0180ef url("logo-glazed.svg") no-repeat left center;
+  background-size: contain;
+  background-attachment: fixed;
 }
 
 body.install-page .page-header {
-  border-bottom: double 3px #01b0ef;
+  border-bottom: double 3px #0180ef;
   margin-bottom: 10px;
-  background: transparent url("logo.svg") no-repeat 93% 45%;
+  background: transparent url("logo-sooperthemes.svg") no-repeat 93% 45%;
   background-size: 15% auto;
 }
 
 body.install-page .button--primary {
-  background: #01b0ef;
-  border-color: #01b0ef;
+  background: #0180ef;
+  border-color: #0180ef;
   text-shadow: none;
   border-radius: 0;
   color: #fff;
@@ -25,7 +28,7 @@ body.install-page .button--primary {
 }
 
 body.install-page .page-title {
-  color: #01b0ef;
+  color: #0180ef;
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -33,12 +36,12 @@ body.install-page .page-title {
 }
 
 body.install-page .task-list .is-active {
-  background-color: #01b0ef;
+  background-color: #0180ef;
   color: #fff;
 }
 
 body.install-page .task-list .is-active:after {
-  border-left-color: #01b0ef;
+  border-left-color: #0180ef;
 }
 
 body.install-page .progress__track {
@@ -47,8 +50,8 @@ body.install-page .progress__track {
 
 body.install-page .progress__bar {
   height: 12px;
-  border-color: #01b0ef;
-  background: #01b0ef;
+  border-color: #0180ef;
+  background: #0180ef;
 }
 
 .cms-features-form .form-type-checkbox {

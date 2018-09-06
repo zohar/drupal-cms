@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update, uninstall and schema functions for the module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function glazed_free_demo_install() {
+  $nid = Drupal::database()->query("SELECT nid FROM {node} WHERE uuid = '36ebca91-636a-48d7-b7a7-29c568ddecd4'")->fetchField();
+  $nid && Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node/' . $nid)->save(TRUE);
+}

@@ -91,12 +91,6 @@ function cms_install_module_batch($module, &$context) {
   // CMS Modules are not available yet.
   Drupal::service('module_installer')->install([$module], TRUE);
 
-  if ($module == 'cms_core') {
-    // Set front page.
-    $nid = Drupal::database()->query("SELECT nid FROM {node} WHERE uuid = '36ebca91-636a-48d7-b7a7-29c568ddecd4'")->fetchField();
-    $nid && Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node/' . $nid)->save(TRUE);
-  }
-
   $context['results'][] = $module;
   $context['message'] = t('Installed %module_name module.', ['%module_name' => $module]);
 }
@@ -107,4 +101,13 @@ function cms_install_module_batch($module, &$context) {
 function cms_cleanup_batch(&$context) {
   Drupal::service('module_installer')->uninstall(['default_content', 'better_normalizers'], FALSE);
   $context['message'] = t('Cleanup.');
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function cms_toolbar_alter(&$items) {
+  if (!empty($items['admin_toolbar_tools'])) {
+    $items['admin_toolbar_tools']['#attached']['library'][] = 'cms/toolbar.icon';
+  }
 }
